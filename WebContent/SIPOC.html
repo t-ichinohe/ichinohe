@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="sipoc.css">
+<script type="text/javascript" src="sipoc.js"></script>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+//    var selectbox = document.getElementById("selectBox");
+//    for(var j=1; j <=26; j++){
+//        selectbox.options[j-1] = new Option(j+"号", j+"号");
+//    }
+
+  var tbodyElement = document.getElementById("missionTable");
+  for(var e=0;e<1; e++){
+    var row = tbodyElement.insertRow(-1);
+    for(var f=0;f<11; f++){
+    var cell = row.insertCell(-1);
+    var textArea = document.createElement("textarea");
+    textArea.cols=10;
+    textArea.rows=4;
+
+    if(f == 0||f == 1 || f == 2||f == 3||f == 8){
+        textArea.style.width="95%";
+    }
+    else if(f == 7){
+        textArea.style.width="85%";
+    }else{
+        textArea.style.width="90%";
+    }
+    cell.appendChild(textArea);
+    }
+  }
+
+   var text = document.createElement("select");
+
+    $("#logout").click(function(){
+        logoutConfig = confirm("ログアウトします。");
+  if ( logoutConfig == true ){
+    location.href="login.html";
+  }
+
+    });
+
+    $("#addRow").click(function(){
+      var tbodyElement = document.getElementById("missionTable");
+    var row = tbodyElement.insertRow(-1);
+    for(var d=0;d<11; d++){
+    var cell = row.insertCell(-1);
+    var textArea = document.createElement("textarea");
+    textArea.cols=10;
+    textArea.rows=4;
+
+    if(d == 0||d == 1 ||d == 2||d == 3||d == 8){
+        textArea.style.width="95%";
+    }
+    else if(f == 7){
+        textArea.style.width="85%";
+    }else{
+        textArea.style.width="90%";
+    }
+    cell.appendChild(textArea);
+    }
+
+    });
+
+    $("#reback").click(function(){
+        logoutConfig = confirm("メニュー画面に戻ります。");
+  if ( logoutConfig == true ){
+    location.href="menu.html";
+  }
+
+    });
+
+});
+
+
+
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
+<title>SIPOC</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+  <h2>SIPOCシート</h2>
+  <div align="center">
+  <table border="1" bordercolor="black" width="100%">
+    <tr>
+      <th class="color">支社名</th>
+      <td class="widthquarter">
+      <select style="width:100%" name="branch" class="width" >
+          <option value="旭川支社">旭川支社</option>
+          <option value="札幌支社">札幌支社</option>
+          <option value="千歳支社">千歳支社</option>
+          <option value="青森支社">青森支社</option>
+          <option value="八戸支社">八戸支社</option>
+          <option value="盛岡支社">盛岡支社</option>
+          <option value="秋田支社">秋田支社</option>
+          <option value="仙台支社">仙台支社</option>
+          <option value="仙台中央支社">仙台中央支社</option>
+          <option value="仙台北支社">仙台北支社</option>
+          <option value="山形支社">山形支社</option>
+          <option value="福島支社">福島支社</option>
+          <option value="大宮支社">大宮支社</option>
+          <option value="春日部登録センター">春日部登録センター</option>
+          <option value="川越支社">川越支社</option>
+          <option value="熊谷支社">熊谷支社</option>
+          <option value="浦安支社">浦安支社</option>
+          <option value="柏支社">柏支社</option>
+          <option value="木更津登録センター">木更津登録センター</option>
+          <option value="成田支社">成田支社</option>
+          <option value="千葉支社">千葉支社</option>
+          <option value="幕張支社">幕張支社</option>
+          <option value="SC営業部 SC第2支社">SC営業部 SC第2支社</option>
+          <option value="SC営業部 SC第3支社">SC営業部 SC第3支社</option>
+          <option value="グローバルアカウント第1支社">グローバルアカウント第1支社</option>
+          <option value="戦略営業開発第1部">戦略営業開発第1部</option>
+          <option value="戦略営業開発第2部">戦略営業開発第2部</option>
+          <option value="特別法人営業本部　ウェルネスサポート課">特別法人営業本部 ウェルネスサポート課</option>
+          <option value="フィナンシャル営業部　外資金融支社">フィナンシャル営業部 外資金融支社</option>
+      </select></td>
+      <th class="color">作成日</th>
+      <td class="width1 widthquarter" nowrap>
+      <select name="year" id="year"><option value="">年</option></select>
+      年
+      <select	name="month" id="month"><option value="">月</option></select>
+      月
+      <select name="date" id="date"><option value="">日</option></select>
+      日</td>
+    </tr>
+    <tr>
+      <th class="color">派遣先名</th>
+      <td class="widthquarter">
+      <input type="text" class="width3">
+      </td>
+      <th class="color">就業部署</th>
+      <td class="widthquarter"><input type="text" class="width3"></td>
+    </tr>
+    <tr>
+      <th class="color">業務内容</th>
+      <td class="width1 widthquarter">
+      <input type="text" class="width3">
+      </td>
+      <th class="color">オーダーNO</th>
+      <td class="widthquarter"><input type="text" class="width3"></td>
+    </tr>
+  </table>
+  <table border="1" bordercolor="black" width="100%">
+    <caption>
+      <b>①業務の本質</b>
+    </caption>
+    <tr>
+      <th class="color" height="20px;">『この業務の本質』 (業務の概要と本質的な意味)</th>
+    </tr>
+    <tr>
+      <td><input type="text" class="width2"></td>
+    </tr>
+  </table>
+  <table class="hiddenBorder">
+    <caption>
+      <b>②業務詳細確認</b>
+    </caption>
+    <tr>
+      <td width="150" height="30"></td>
+      <td class="td2"><b>前工程</b></td>
+      <td width="300" height="30"></td>
+      <td width="600" height="30"><center>
+          <b>一連の業務内容（核となる業務と一連の付随業務）</b>
+        </center></td>
+      <td width="300" height="30"></td>
+      <td class="td2"><b>後工程</b></td>
+      <td width="150" height="30"></td>
+    </tr>
+  </table>
+  <table border="1" bordercolor="black" width="100%" id="missionTable">
+    <tr>
+      <td rowspan="2" class="td2 bgcolor"><b>Supplier<br> サプライヤー
+      </b><br>誰から</td>
+      <td rowspan="2" class="td2 bgcolor"><b>手段・ツール</b></td>
+      <td rowspan="2" class="td3 bgcolor"><b>Input<br> インプット
+      </b><br>何を（受けて）</td>
+      <td rowspan="2" class="td4 bgcolor"><b>Process<br>プロセス
+      </b><br>作業</td>
+      <td rowspan="2" class="td5 bgcolor" nowrap>その割合</td>
+      <td colspan="2" class="bgcolor">必要なスキル</td>
+      <td rowspan="2" class="bgcolor">号数</td>
+      <td rowspan="2" class="td3 bgcolor"><b>Output <br>アウトプット
+      </b><br>何を（提供するか）</td>
+      <td rowspan="2" class="td2 bgcolor"><b>手段・ツール</b></td>
+      <td rowspan="2" class="td2 bgcolor"><b>Customer<br> 誰に
+      </b><br>（提供するか）</td>
+    </tr>
+    <tr>
+      <td class="td5 bgcolor"><p class="p1">知識</p></td>
+      <td class="td5 bgcolor"><p class="p1">経験</p></td>
+    </tr>
+
+  </table>
+  <div align="left">
+  <input type="button" id="addRow" value="行を追加">
+  </div>
+  <table border="1" bordercolor="black" width="100%">
+    <caption>
+      <b>③工程の全体像 川上～川下(該当業務を行う部署は全社の工程のどこに位置づけられ、全体の工程はどう流れているのか。)</b>
+    </caption>
+    <tr>
+      <td class="bgcolor"><b>部署とその主な役割</b></td>
+      <td rowspan="2" >⇒</td>
+      <td class="bgcolor"><b>部署とその主な役割</b></td>
+      <td rowspan="2">⇒</td>
+      <td class="bgcolor"><b>部署とその主な役割</b></td>
+      <td rowspan="2">⇒</td>
+      <td class="bgcolor"><b>部署とその主な役割</b></td>
+      <td rowspan="2">⇒</td>
+      <td class="bgcolor"><b>部署とその主な役割</b></td>
+      <td rowspan="2">⇒</td>
+      <td class="bgcolor"><b>顧客の顧客(外部顧客)</b></td>
+    </tr>
+    <tr>
+      <td><input type="text" class="width1"></td>
+      <td><input type="text" class="width1"></td>
+      <td><input type="text" class="width1"></td>
+      <td><input type="text" class="width1"></td>
+      <td><input type="text" class="width1"></td>
+      <td><input type="text" class="width1"></td>
+    </tr>
+
+  </table>
+  <span style="word-spacing: 1000px"><b> 川上 川下</b></span>
+
+  <table border="1" bordercolor="black" width="100%" rules="all">
+    <caption>
+      <b>④業務遂行上の目標 (業務を遂行するにあたり、求められるものとその優先順位)</b>
+    </caption>
+    <tr>
+      <th class="color" rowspan="3" width="10%">目標</th>
+      <th width="10%" style="width:40px;">①</th>
+      <td><input type="text" class="width2"></td>
+    </tr>
+    <tr>
+      <th style="width:40px;">②</th>
+      <td><input type="text" class="width2"></td>
+    </tr>
+    <tr>
+      <th style="width:40px;">③</th>
+      <td><input type="text" class="width2"></td>
+    </tr>
+  </table>
+
+  <table border="1" bordercolor="black" width="100%" rules="all">
+    <caption>
+      <b>⑤その他確認事項</b>
+    </caption>
+    <tr>
+      <th class="color">指揮命令者が複数いるか</th>
+      <td class="space" colspan="5">
+      <input type="radio" name="indicate" checked> いる
+      <input type="radio" name="indicate"> いない
+       (「いる」場合、速やかに契約書に反映させること)</td>
+    </tr>
+    <tr>
+      <th class="color" rowspan="3">出張・外出の有無および業務分類</th>
+      <td class="space" colspan="5"><input
+        type="radio" name="btrip" value="あり" checked> あり <input
+        type="radio" name="btrip" value="なし"> なし
+        (「あり」場合、その頻度と業務の内容を記入)</td>
+
+
+    </tr>
+    <tr>
+      <td colspan="5"><input type="text" class="width2"></td>
+    </tr>
+    <tr>
+      <td class="space" colspan="3">
+      <input type="radio" name="work"
+        checked> 26業務 <input type="radio" name="work"> 付随 <input
+        type="radio" name="work"> 付随的 <input type="radio"
+        name="work"> その他</td>
+      <td style="width: 10%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td>%</td>
+
+    </tr>
+    <tr>
+      <th class="color" rowspan="2">自由化業務の起算日</th>
+      <td class="widthquarter"nowrap>
+      <select
+        name="year" id="freeyear"><option value="">年</option></select>年<select
+        name="month" id="freemonth"><option value="">月</option></select>月<select
+        name="date" id="freedate"><option value="">日</option></select>日</td>
+      <td class="bgcolor" width="20%"><b>期間抵触日</b></td>
+      <td class="widthquarter" colspan="3" nowrap><select
+        name="year" id="againstyear"><option value="">年</option></select>年<select
+        name="month" id="againstmonth"><option value="">月</option></select>月<select
+        name="date" id="againstdate"><option value="">日</option></select>日</td>
+    </tr>
+    <tr>
+      <td colspan="5">自由化業務の場合は、起算日と期間抵触日のみ記入し、以下記載不要。
+
+
+    </tr>
+    <tr>
+      <th class="color" rowspan="4" nowrap>26業務に関連した分担で行われる付随業務</th>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+
+    <tr>
+      <th class="color" rowspan="4">付随的業務</th>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td style="width:3%">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td class="ratioWidth">%</td>
+    </tr>
+
+    <tr>
+      <th class="color" rowspan="4">上記以外の業務</th>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td class="ratioWidth">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td class="ratioWidth">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td class="ratioWidth">%</td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="text" class="width2"></td>
+      <td style="width: 12%"><input type="text" class="width1"
+        maxlength="4" size="3"></td>
+      <td class="ratioWidth">%</td>
+    </tr>
+  </table>
+
+  <table border="1" bordercolor="black" width="100%" id="target2">
+    <caption>
+      <b>⑥SIPOCシート確認履歴</b>
+    </caption>
+    <tr>
+      <th class="color" colspan="2" style="width: 15%">確認日</th>
+      <th class="color" style="width: 30%" nowrap>確認履歴(および改善事項)</th>
+      <th class="color" style="width: 10%">確認者</th>
+      <th class="color" style="width: 10%">確認日</th>
+    </tr>
+
+    <tr>
+<td colspan="2" class="center">①<select name="year" id="resyear"><option
+            value="">年</option></select>年<select name="month" id="resmonth"><option
+            value="">月</option></select>月<select name="date" id="resdate"><option
+            value="">日</option></select>日
+      </td>
+      <td rowspan="3"><textarea cols="30" rows="5"></textarea></td>
+      <td class="center">支社長</td>
+      <td class="center"><select>
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">12</option>
+      </select>月<select name="example">
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">11</option>
+          <option value="サンプル3">12</option>
+          <option value="サンプル1">13</option>
+          <option value="サンプル2">14</option>
+          <option value="サンプル3">15</option>
+          <option value="サンプル3">16</option>
+          <option value="サンプル1">17</option>
+          <option value="サンプル2">18</option>
+          <option value="サンプル3">19</option>
+          <option value="サンプル1">20</option>
+          <option value="サンプル2">21</option>
+          <option value="サンプル3">22</option>
+          <option value="サンプル1">23</option>
+          <option value="サンプル2">24</option>
+          <option value="サンプル3">25</option>
+          <option value="サンプル3">26</option>
+          <option value="サンプル1">27</option>
+          <option value="サンプル2">28</option>
+          <option value="サンプル3">29</option>
+          <option value="サンプル1">30</option>
+          <option value="サンプル1">31</option>
+      </select>日</td>
+    </tr>
+    <tr>
+      <td class="center" nowrap>改善の必要</td>
+      <td class="center"><input type="radio" name="improve" value="あり"
+        checked>有<input type="radio" name="improve" value="なし">無</td>
+      <td class="center" nowrap>エリア長</td>
+      <td class="center"><select>
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">12</option>
+      </select>月<select name="example">
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">11</option>
+          <option value="サンプル3">12</option>
+          <option value="サンプル1">13</option>
+          <option value="サンプル2">14</option>
+          <option value="サンプル3">15</option>
+          <option value="サンプル3">16</option>
+          <option value="サンプル1">17</option>
+          <option value="サンプル2">18</option>
+          <option value="サンプル3">19</option>
+          <option value="サンプル1">20</option>
+          <option value="サンプル2">21</option>
+          <option value="サンプル3">22</option>
+          <option value="サンプル1">23</option>
+          <option value="サンプル2">24</option>
+          <option value="サンプル3">25</option>
+          <option value="サンプル3">26</option>
+          <option value="サンプル1">27</option>
+          <option value="サンプル2">28</option>
+          <option value="サンプル3">29</option>
+          <option value="サンプル1">30</option>
+          <option value="サンプル1">31</option>
+      </select>日</td>
+    </tr>
+    <tr>
+      <td class="center" nowrap>担当営業</td>
+      <td id="chktd1"><input type="text" class="width1"></td>
+      <td class="center">新J番</td>
+      <td><input type="text" class="width1"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" class="center" nowrap>②<select name="example">
+          <option value="サンプル1">2010</option>
+          <option value="サンプル2">2011</option>
+          <option value="サンプル3">2012</option>
+          <option value="サンプル2">2013</option>
+          <option value="サンプル3">2014</option>
+      </select>年<select>
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">12</option>
+      </select>月<select name="example">
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">11</option>
+          <option value="サンプル3">12</option>
+          <option value="サンプル1">13</option>
+          <option value="サンプル2">14</option>
+          <option value="サンプル3">15</option>
+          <option value="サンプル3">16</option>
+          <option value="サンプル1">17</option>
+          <option value="サンプル2">18</option>
+          <option value="サンプル3">19</option>
+          <option value="サンプル1">20</option>
+          <option value="サンプル2">21</option>
+          <option value="サンプル3">22</option>
+          <option value="サンプル1">23</option>
+          <option value="サンプル2">24</option>
+          <option value="サンプル3">25</option>
+          <option value="サンプル3">26</option>
+          <option value="サンプル1">27</option>
+          <option value="サンプル2">28</option>
+          <option value="サンプル3">29</option>
+          <option value="サンプル1">30</option>
+          <option value="サンプル1">31</option>
+      </select>日
+      </td>
+      <td rowspan="3"><textarea cols="30" rows="5"></textarea></td>
+      <td class="center">支社長</td>
+      <td class="center"><select>
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">12</option>
+      </select>月<select name="example">
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">11</option>
+          <option value="サンプル3">12</option>
+          <option value="サンプル1">13</option>
+          <option value="サンプル2">14</option>
+          <option value="サンプル3">15</option>
+          <option value="サンプル3">16</option>
+          <option value="サンプル1">17</option>
+          <option value="サンプル2">18</option>
+          <option value="サンプル3">19</option>
+          <option value="サンプル1">20</option>
+          <option value="サンプル2">21</option>
+          <option value="サンプル3">22</option>
+          <option value="サンプル1">23</option>
+          <option value="サンプル2">24</option>
+          <option value="サンプル3">25</option>
+          <option value="サンプル3">26</option>
+          <option value="サンプル1">27</option>
+          <option value="サンプル2">28</option>
+          <option value="サンプル3">29</option>
+          <option value="サンプル1">30</option>
+          <option value="サンプル1">31</option>
+      </select>日</td>
+    </tr>
+    <tr>
+      <td class="center" nowrap>改善の必要</td>
+      <td class="center"><input type="radio" name="improve2"
+        value="あり" checked>有<input type="radio" name="improve2"
+        value="なし">無</td>
+      <td class="center" nowrap>エリア長</td>
+      <td class="center"><select>
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">12</option>
+      </select>月<select name="example">
+          <option value="サンプル1">1 </option>
+          <option value="サンプル2">2 </option>
+          <option value="サンプル3">3 </option>
+          <option value="サンプル1">4 </option>
+          <option value="サンプル2">5 </option>
+          <option value="サンプル3">6 </option>
+          <option value="サンプル1">7 </option>
+          <option value="サンプル2">8 </option>
+          <option value="サンプル3">9 </option>
+          <option value="サンプル1">10</option>
+          <option value="サンプル2">11</option>
+          <option value="サンプル3">12</option>
+          <option value="サンプル1">13</option>
+          <option value="サンプル2">14</option>
+          <option value="サンプル3">15</option>
+          <option value="サンプル3">16</option>
+          <option value="サンプル1">17</option>
+          <option value="サンプル2">18</option>
+          <option value="サンプル3">19</option>
+          <option value="サンプル1">20</option>
+          <option value="サンプル2">21</option>
+          <option value="サンプル3">22</option>
+          <option value="サンプル1">23</option>
+          <option value="サンプル2">24</option>
+          <option value="サンプル3">25</option>
+          <option value="サンプル3">26</option>
+          <option value="サンプル1">27</option>
+          <option value="サンプル2">28</option>
+          <option value="サンプル3">29</option>
+          <option value="サンプル1">30</option>
+          <option value="サンプル1">31</option>
+      </select>日</td>
+    </tr>
+    <tr>
+      <td class="center">担当営業</td>
+      <td><input type="text" class="width1"></td>
+      <td class="center">新J番</td>
+      <td><input type="text" class="width1"></td>
+    </tr>
+  </table>
+  <div align="left">
+  <input type="button" value="行を追加" onclick="AddRowResult();">
+  </div>
+  <table border="1" bordercolor="black" width="100%">
+    <caption>
+      <b>【備考】</b>
+    </caption>
+    <tr>
+      <td><textarea cols=30 rows=4></textarea></td>
+    </tr>
+  </table>
+  <h5 align="right">Ver. 1.2_2012.05</h5>
+  <p>
+  <div align="right">
+    <input type="button" value="確認" onclick="alert('登録確認画面へ遷移します。')">
+    <input type="button" value="キャンセル" onclick="alert('登録内容をクリアします。')">
+        <input type="button" value="メニュー画面へ戻る" id="reback">
+    <input type="button" value="ログアウト" id="logout">
+    </div>
+  </p>
+</body>
+</div>
+</html>

@@ -1,0 +1,92 @@
+@CHARSET "windows-31j";
+<style type="text/css">
+select.width {
+	width: 100%;
+}
+/* inputタグスタイル*/
+input.width1 {
+	width: 95%;
+}
+
+input.width2 {
+	width: 98%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/* tableタグスタイル */
+table,th,td {
+	border: 1px;
+	border-style:solid;
+}
+
+th {
+	text-align: center;
+	/* background-color: #bde9ba; */
+}
+
+td.center {
+	text-align: center;
+	/* background-color: #bde9ba; */
+}
+
+td.width1 {
+	width: 12.5%;
+}
+
+td.widthquarter{
+	width: 25%;
+
+}
+
+td.td1 {
+	width: 90px;
+	height: 30px;
+	text-align: center;
+}
+
+td.td2 {
+	width: 100px;
+	height: 30px;
+	text-align: center;
+}
+
+td.td3 {
+	width: 150px;
+	height: 30px;
+	text-align: center;
+}
+
+td.td4 {
+	width: 280px;
+	height: 30px;
+	text-align: center;
+}
+
+td.td5 {
+	width: 70px;
+	height: 15px;
+	text-align: center;
+}
+
+/* textarea */
+textarea {
+	background-color: #ffffff;
+	width: 95%;
+}
+
+body {
+	font-size: 100%;
+	margin-left:25px;
+	margin-right:25px;
+}
+
+table caption {
+	width:100%;
+	padding-top: 10px;
+	text-align:left;
+}
+
+p.p1 {
+	font-size: 80%;
+}

@@ -1,0 +1,83 @@
+<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+
+<head>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="dateformat.js"></script>
+<script type="text/javascript">
+$(function(){
+var i = 0;
+var dateFormat = new DateFormat("yyyy年MM月dd日");
+var selectbox = document.getElementById("selectBox");
+for(var j=1; j <=12; j++){
+selectbox.options[j-1] = new Option(j, j);
+
+}
+ $("#addTable").click(function(){
+  var tbodyElement = document.getElementById("table1");
+  var row = tbodyElement.insertRow(-1);
+  var cell1 = row.insertCell(-1);   
+  var cell2 = row.insertCell(-1);
+  var cell3 = row.insertCell(-1);  
+   
+   var text = document.createElement("select"); 
+   text.id = "selectBox"+i;
+   var select = "selectBox"+i;
+   var c = document.getElementById(select);
+   for(var j=1; j <=12; j++){
+	c.options[j-1] = new Option(j, j);
+
+	}
+　　i++;  
+
+  if(i % 2 == 0){
+   cell1.style.backgroundColor = "pink";
+  }
+  cell1.align = "center";
+  cell1.appendChild(document.createTextNode(i));
+  cell2.appendChild(text);
+
+   cell3.appendChild(textDiv);
+  if(i == 10){
+  $("#addTable").slideUp();
+  
+  }
+  
+
+});
+  $("#insertAlert").click(function(){
+  var a = "textArea"+(i - 1);
+  var b = document.getElementById(a).value;
+  alert(a);
+  if(b != ""){
+  alert(b);
+  }
+  });
+  $("#insertText").click(function(){
+  document.getElementById("textArea"+(i - 1)).value = dateFormat.format(new Date());
+
+  });
+});
+  
+
+</script>
+</head>
+<body>
+<table id="table1" border=1 bordercolor="black">
+<tr>
+<td align = "center" bgcolor="pink">
+テスト
+</td>
+<td width = "300" align = "center"　bgcolor="pink">
+テスト2
+</textarea>
+</td>
+</tr>
+</table>
+<select id="selectBox" name="selectBox"></select>
+<input type="button" value="追加" id="addTable">
+<input type="button" value="アラート出力" id="insertAlert">
+<input type="button" value="日付挿入" id="insertText">
+</body>
+</html>

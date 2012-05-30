@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#makeButton").click(function(){
+        location.href ="SIPOC.html";
+    });
+    $("#editButton").click(function(){
+        location.href ="SIPOC.html";
+    });
+    $("#logoutButton").click(function(){
+        logoutConfig = confirm("ログアウトします。");
+  if ( logoutConfig == true ){
+  location.href="login.html";
+  }
+
+    });
+
+});
+</script>
+<style type="text/css">
+body {
+  font-size: 100%
+}
+
+button.button1 {
+  font-size: 140%;
+  width: 170px;
+  height: 40px;
+}
+</style>
+
+<title>メニュー画面</title>
+</head>
+<body bgcolor="">
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <p style="font-size: 400%" align="center">メニュー画面</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <p align="center">
+    新しくSIPOCシートを作成する場合は<b>[新規作成]</b>ボタンをクリックしてください。
+  </p>
+  <center>
+    <table>
+      <tr>
+        <td style="width: 100%; height: 100%"><input type="button"
+          class="button1" id="makeButton" value="新規作成"></td>
+      </tr>
+    </table>
+  </center>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <p align="center">
+    すでに登録済のSIPOCシートを編集する場合は,<br> オーダー番号を入力して<b>[編集]</b>ボタンをクリックしてください。
+  </p>
+  <center>
+    <table>
+      <tr>
+        <td align="right" width="100px" height="100%">オーダー番号</td>
+        <td align="left" width="170px" height="100%"><input
+          style="width: 99%; height: 100%"></td>
+        <td><input type="button" id="editButton" value="編集"></td>
+
+      </tr>
+    </table>
+  </center>
+  <input type="button"
+    style="width: 100px; position: absolute; right: 2px; bottom: 2px"
+    id="logoutButton" value="ログアウト">
+
+</body>
+</html>
